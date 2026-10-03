@@ -1,233 +1,187 @@
 <div align="center">
 
-#  CreditWiseLoan — Loan Approval Prediction
+# CreditWiseLoan — Loan Approval Prediction
 
-**An End-to-End Machine Learning Project for Loan Approval Prediction**
+### End-to-End Machine Learning Project with Streamlit
 
+[![Open Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://creditwiseloanapproval-7xznu2eursfhfzrswihvqc.streamlit.app/)
 
 </div>
 
 ---
 
-##  Project Overview
+##  Live Demo
 
-**CreditWiseLoan** is a machine learning project designed to predict whether a loan application will be **approved** or **rejected**, based on an applicant's financial, personal, and employment-related information.
+**[Try CreditWiseLoan →](https://creditwiseloanapproval-7xznu2eursfhfzrswihvqc.streamlit.app/)**
 
-The project follows a complete, end-to-end ML workflow — from data exploration and preprocessing to model training, evaluation, and prediction — with the goal of understanding how various applicant and financial factors influence loan approval decisions.
+An interactive Streamlit application that predicts loan approval based on applicant and financial information.
+
+---
+
+##  Overview
+
+**CreditWiseLoan** is a machine learning classification project that predicts whether a loan application will be **approved or rejected**.
+
+The project covers the complete ML workflow:
+
+**Data Analysis → Preprocessing → Feature Engineering → Model Training → Evaluation → Deployment**
+
+The final Logistic Regression model is integrated into a Streamlit web application for real-time predictions.
 
 ---
 
 ##  Problem Statement
 
-Loan approval decisions typically depend on a combination of factors, including:
+Loan approval can depend on factors such as:
 
-- Applicant Income
-- Coapplicant Income
+- Applicant & Coapplicant Income
 - Credit Score
 - Existing Loans
-- Debt-to-Income Ratio
+- DTI Ratio
 - Savings
 - Collateral Value
+- Loan Amount
 - Employment Status
-- Education Level
+- Education
 - Property Area
 - Loan Purpose
 
-Using these features, this project predicts the target variable: **`Loan_Approved`**
+The target variable is:
 
----
+```text
+Loan_Approved
+0 → Rejected
+1 → Approved
 
-##  Project Structure
+ Dataset
+The dataset contains 1,000 loan application records with 19 original features.
+Main Features
+Category	Features
+Financial	Income, Savings, DTI Ratio, Loan Amount, Collateral
+Credit	Credit Score, Existing Loans
+Personal	Age, Gender, Marital Status, Dependents
+Employment	Employment Status, Employer Category
+Loan	Loan Term, Loan Purpose
+Property	Property Area
+Education	Education Level
 
-```
-CreditwiseLoanApproval/
-├── loanapprovaldata.csv    # Dataset used for training and analysis
-├── main.ipynb               # Data preprocessing, EDA, model training,
-│                             # evaluation, and prediction
-└── README.md                 # Project documentation
-```
 
-###  Machine Learning Workflow
+Feature Engineering
+Two additional features were created:
+Credit_Score_sq
+DTI_Ratio_sq
 
-```
-Raw Dataset
-     │
-     ▼
-Data Exploration (EDA)
-     │
-     ▼
-Data Cleaning
-     │
-     ▼
-Handling Missing Values
-     │
-     ▼
-Feature Encoding
-     │
-     ▼
+The final model uses 27 features after encoding and feature engineering.
+ Machine Learning Workflow
+Dataset
+   ↓
+EDA & Data Cleaning
+   ↓
+Missing Value Handling
+   ↓
+Encoding & Feature Engineering
+   ↓
 Train-Test Split
-     │
-     ▼
+   ↓
+Feature Scaling
+   ↓
 Model Training
-     │
-     ▼
+   ↓
 Model Evaluation
-     │
-     ▼
-Loan Approval Prediction
-```
+   ↓
+Logistic Regression Selection
+   ↓
+Streamlit Deployment
 
----
+ Models & Performance
+Three classification models were evaluated:
+Model	Accuracy	Precision	Recall	F1-Score
+Logistic Regression	87.50%	87.56%	87.50%	87.53%
+KNN	80.00%	79.45%	80.00%	78.71%
+Gaussian Naive Bayes	86.50%	86.44%	86.50%	86.47%
 
-##  Exploratory Data Analysis
 
-The dataset was explored to understand the relationship between different features and loan approval outcomes. The analysis includes:
+Deployed Model: Logistic Regression
+ Application Testing
+The deployed application was tested using five different applicant profiles.
+Test Case	Prediction	Probability
+1	✅ Approved	91.86%
+2	❌ Rejected	0.00%
+3	✅ Approved	99.92%
+4	❌ Rejected	0.36%
+5	❌ Rejected	0.00%
 
-- Distribution of numerical features
-- Analysis of categorical features
-- Boxplots for detecting outliers
-- Correlation analysis and heatmap
-- Comparison of financial factors with loan approval status
 
-> Visualizations were created using **Matplotlib** and **Seaborn**.
+Model probabilities represent predictions based on patterns learned from the training dataset and should not be interpreted as real-world loan approval probabilities.
 
----
-
-##  Data Preprocessing
-
-The dataset was prepared for machine learning through the following steps:
-
-- Handling missing values
-- Encoding categorical variables
-- Label encoding the target variable
-- One-Hot Encoding categorical features
-- Preparing numerical features
-- Creating a machine-learning-ready dataset
-
----
-
-##  Dataset Features
-
-| Feature | Description |
-|---|---|
-| `Applicant_Income` | Income of the primary applicant |
-| `Coapplicant_Income` | Income of the coapplicant |
-| `Employment_Status` | Employment status of the applicant |
-| `Age` | Age of the applicant |
-| `Marital_Status` | Marital status |
-| `Dependents` | Number of dependents |
-| `Credit_Score` | Applicant's credit score |
-| `Existing_Loans` | Number of existing loans |
-| `DTI_Ratio` | Debt-to-Income ratio |
-| `Savings` | Applicant's savings |
-| `Collateral_Value` | Value of collateral |
-| `Loan_Amount` | Requested loan amount |
-| `Loan_Term` | Duration of the loan |
-| `Loan_Purpose` | Purpose of the loan |
-| `Property_Area` | Location category of the property |
-| `Education_Level` | Education level of the applicant |
-| `Gender` | Gender of the applicant |
-| `Employer_Category` | Category of employer |
-
-###  Target Variable
-
-- **`Loan_Approved`** — Indicates whether a loan application is approved or not.
-
----
-
-##  Machine Learning Models
-
-Multiple classification models are trained and evaluated to identify the most effective approach for predicting loan approval. Models are compared using:
-
-- **Accuracy**
-- **Precision**
-- **Recall**
-
-This enables a clear comparison of model performance to determine which model performs best on the dataset.
-
----
-
-##  Technologies Used
-
+ Streamlit Application
+Users can enter:
+- Applicant income
+- Coapplicant income
+- Age
+- Dependents
+- Credit score
+- Existing loans
+- DTI ratio
+- Savings
+- Collateral value
+- Loan amount
+- Loan term
+- Education
+- Gender
+- Employment
+- Marital status
+- Property area
+- Employer category
+- Loan purpose
+The application returns:
+Loan Prediction + Approval Probability
+ Tech Stack
 - Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
+- Pandas & NumPy
+- Matplotlib & Seaborn
 - Scikit-learn
+- Joblib
 - Jupyter Notebook
+- Streamlit
+- Git & GitHub
+📂 Project Structure
+CreditwiseLoanApproval/
+│
+├── app.py
+├── main.ipynb
+├── loan_approval_data.csv
+├── model.pkl
+├── preprocessing.pkl
+├── requirements.txt
+├── .gitignore
+└── README.md
 
----
-
-##  How to Run the Project
-
-**1. Clone the repository**
-```bash
+ Run Locally
+Clone the repository
 git clone https://github.com/shriihphoria/CreditwiseLoanApproval.git
-```
-
-**2. Navigate to the project directory**
-```bash
 cd CreditwiseLoanApproval
-```
 
-**3. Install the required libraries**
-```bash
-pip install pandas numpy matplotlib seaborn scikit-learn jupyter
-```
+Install dependencies
+pip install -r requirements.txt
 
-**4. Start Jupyter Notebook**
-```bash
-jupyter notebook
-```
+Run the application
+streamlit run app.py
 
-Then open **`main.ipynb`** and run the cells.
-
----
-
-##  Key Learning Outcomes
-
-Through this project, practical experience was gained in:
-
-- Data cleaning and preprocessing
-- Handling missing values
-- Exploratory data analysis
-- Data visualization
-- Feature encoding (Label Encoding & One-Hot Encoding)
-- Train-test splitting
-- Machine learning classification
-- Model evaluation
-- Comparing multiple ML models
-
----
-
-##  Future Improvements
-
-- [ ] Hyperparameter tuning using `GridSearchCV`
+☁️ Deployment
+The application is deployed using Streamlit Community Cloud.
+Launch Live Application →
+ Future Improvements
+- [ ] Hyperparameter tuning
 - [ ] Cross-validation
-- [ ] Feature importance analysis
-- [ ] Adding more machine learning models
-- [ ] Building a Streamlit web application
-- [ ] Deploying the trained model
-- [ ] Creating a real-time loan prediction interface
-- [ ] Adding a `requirements.txt` file
-
----
-
-##  Disclaimer
-
-This project is created for **educational and learning purposes only**. The model should **not** be used for real-world financial decision-making without proper validation, fairness testing, regulatory compliance, and additional production-level safeguards.
-
----
-
-##  Author
-
-**Shreeya Chakraborty**
-
----
-
-<div align="center">
-
-If you found this project interesting, consider giving the repository a ⭐️!
-
-</div>
+- [ ] Feature importance & model explainability
+- [ ] Probability calibration
+- [ ] Additional ML models
+- [ ] Larger and more diverse dataset
+- [ ] Fairness and bias evaluation
+- [ ] Automated model testing
+ Disclaimer
+This project is developed for educational and demonstration purposes only.
+The predictions should not be used as real-world financial or lending decisions. Production lending systems require additional validation, explainability, fairness testing, security, and regulatory compliance.
+ Author
+Shreeya Chakraborty
