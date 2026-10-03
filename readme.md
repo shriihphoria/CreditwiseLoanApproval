@@ -10,7 +10,7 @@
 
 ---
 
-## 🚀 Live Demo
+##  Live Demo
 
 **[Try CreditWiseLoan →](https://creditwiseloanapproval-7xznu2eursfhfzrswihvqc.streamlit.app/)**
 
@@ -18,7 +18,7 @@ An interactive Streamlit application that predicts loan approval based on applic
 
 ---
 
-## 📌 Overview
+##  Overview
 
 **CreditWiseLoan** is a machine learning classification project that predicts whether a loan application will be **approved or rejected**.
 
@@ -30,7 +30,7 @@ The final **Logistic Regression** model is integrated into a Streamlit web appli
 
 ---
 
-## 🎯 Problem Statement
+##  Problem Statement
 
 Loan approval can depend on factors such as:
 
@@ -59,7 +59,7 @@ Loan_Approved
 
 ---
 
-## 📊 Dataset
+##  Dataset
 
 The dataset contains **1,000 loan application records** with **19 original features**.
 
@@ -88,7 +88,7 @@ The final model uses **27 features** after encoding and feature engineering.
 
 ---
 
-## 🔄 Machine Learning Workflow
+##  Machine Learning Workflow
 
 ```text
 Dataset
@@ -114,7 +114,7 @@ Streamlit Deployment
 
 ---
 
-## 🤖 Models & Performance
+##  Models & Performance
 
 Three classification models were evaluated:
 
@@ -142,7 +142,7 @@ preprocessing.pkl
 
 ---
 
-## 🧪 Application Testing
+##  Application Testing
 
 The deployed application was tested using five different applicant profiles.
 
@@ -158,7 +158,7 @@ The deployed application was tested using five different applicant profiles.
 
 ---
 
-## 🌐 Streamlit Application
+##  Streamlit Application
 
 Users can enter:
 
@@ -187,7 +187,7 @@ The application returns:
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Python**
 - **Pandas & NumPy**
@@ -201,7 +201,7 @@ The application returns:
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```text
 CreditwiseLoanApproval/
@@ -218,7 +218,7 @@ CreditwiseLoanApproval/
 
 ---
 
-## ⚙️ Run Locally
+##  Run Locally
 
 ### 1. Clone the Repository
 
@@ -257,7 +257,7 @@ The application is deployed using **Streamlit Community Cloud**.
 
 ---
 
-## 🔮 Future Improvements
+##  Future Improvements
 
 - [ ] Hyperparameter tuning
 - [ ] Cross-validation
@@ -270,7 +270,7 @@ The application is deployed using **Streamlit Community Cloud**.
 
 ---
 
-## ⚠️ Disclaimer
+##  Disclaimer
 
 This project is developed for **educational and demonstration purposes only**.
 
@@ -278,7 +278,7 @@ The predictions should not be used as real-world financial or lending decisions.
 
 ---
 
-## 👩‍💻 Author
+##  Author
 
 **Shreeya Chakraborty**
 
@@ -290,6 +290,6 @@ The predictions should not be used as real-world financial or lending decisions.
 
 <div align="center">
 
-⭐ If you found this project interesting, consider giving the repository a star!
+ If you found this project interesting, consider giving the repository a star!
 
 </div>
